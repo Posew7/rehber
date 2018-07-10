@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="75" resizable="false" closable="false" collapsible="false">
+                <ui:insert name="top">
+                    <div align="center">
+                        <h2>REHBER UYGULAMASI</h2>
+                    </div>
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="75" resizable="false" closable="false" collapsible="false">
+                <ui:insert name="bottom">
+                    <div align="center">
+                        <h6>Copyright @2018</h6>
+                    </div>
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="250" header="Menü" resizable="true" closable="true" collapsible="true">
+                <h:form>
+    <p:growl>
+        <p:autoUpdate />
+    </p:growl>
+ 
+    <p:panelMenu style="width:300px">
+        <p:submenu label="Ajax Menuitems">
+            <p:menuitem value="Ekle" actionListener="#{menuView.save}" icon="ui-icon-disk" />
+            <p:menuitem value="Değiştir" actionListener="#{menuView.update}"  icon="ui-icon-arrowrefresh-1-w" />
+            <p:menuitem value="Listele" actionListener="#{menuView.save}" icon="ui-icon-document" />
+        </p:submenu>
+        <p:submenu label="Non-Ajax Menuitem">
+            <p:menuitem value="Sil" actionListener="#{menuView.delete}"  ajax="false" icon="ui-icon-close"/>
+        </p:submenu>
+        <p:separator />
+        <p:submenu label="İletişim" >
+            <p:submenu label="Links" icon="ui-icon-extlink">
+                <p:submenu label="PrimeFaces" icon="ui-icon-heart">
+                    <p:menuitem value="Home" url="http://www.primefaces.org" icon="ui-icon-home" />
+                    <p:menuitem value="Docs" url="http://www.primefaces.org/documentation" icon="ui-icon-document" />
+                    <p:menuitem value="Download" url="http://www.primefaces.org/downloads" icon="ui-icon-arrowthick-1-s" />
+                    <p:menuitem value="Support" url="http://www.primefaces.org/support" icon="ui-icon-wrench" />
+                </p:submenu>
+                <p:submenu label="Posew7" icon="ui-icon-arrowthick-1-e">
+                    <p:menuitem value="Youtube" url="https://www.youtube.com/channel/UCKf3B__nfvvBegwRySkh_Jg" icon="ui-icon-home" />
+                </p:submenu>
+            </p:submenu>
+            <p:menuitem value="Mobile" icon="ui-icon-signal" />
+        </p:submenu>
+    </p:panelMenu>
+</h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content"></ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+
+</html>
+
